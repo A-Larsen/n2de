@@ -15,6 +15,9 @@
  * this program; if not, write to the Free Software Foundation, Inc., 51
  * Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
+#ifndef _N2DE_CONFIG_H_
+#define _N2DE_CONFIG_H_
+
 #include <stdio.h>
 #include <stdbool.h>
 #if defined(_WIN32)
@@ -29,3 +32,4 @@
 #include <SDL2/SDL.h>
 #endif
 
+#endif // _N2DE_CONFIG_H_

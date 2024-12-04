@@ -15,14 +15,14 @@
  * this program; if not, write to the Free Software Foundation, Inc., 51
  * Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-#ifndef _window_H_
-#define _window_H_
+#ifndef _N2DE_STDLIB_H_
+#define _N2DE_STDLIB_H_
 
 #include <GL/gl.h>
-#include "../global.h"
+#include "../config.h"
 #include "../n2de/error.h"
 
 #define SCREEN_WIDTH_PX 1600
 #define SCREEN_HEIGHT_PX 800
 
-#endif // _window_H_
+#endif // _N2DE_STDLIB_H_

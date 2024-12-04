@@ -15,8 +15,8 @@
  * this program; if not, write to the Free Software Foundation, Inc., 51
  * Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-#ifndef _ERROR_H_
-#define _ERROR_H_
+#ifndef _N2DE_ERROR_H_
+#define _N2DE_ERROR_H_
 #include <stdbool.h>
 #include <string.h>
 #include <stdio.h>
@@ -28,4 +28,4 @@
 #endif
 
 void PTP_LOG_ERROR(bool condition, char *str);
-#endif // _ERROR_H_
+#endif // _N2DE_ERROR_H_
