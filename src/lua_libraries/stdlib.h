@@ -18,6 +18,7 @@
 #ifndef _window_H_
 #define _window_H_
 
+#include <GL/gl.h>
 #include "../global.h"
 #include "../engine/error.h"
 

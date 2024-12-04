@@ -17,6 +17,7 @@
  */
 #include "stdlib.h"
 SDL_Window *window = NULL;
+SDL_GLContext context = NULL;
 
 int init(lua_State *L) {
     bool canInit = SDL_Init(SDL_INIT_VIDEO);
@@ -26,10 +27,28 @@ int init(lua_State *L) {
 }
 
 int createWindow(lua_State *L) {
-    window = SDL_CreateWindow("PTP", SDL_WINDOWPOS_UNDEFINED,
-                                     SDL_WINDOWPOS_UNDEFINED,
-                                     SCREEN_WIDTH_PX, SCREEN_HEIGHT_PX,
-                                     SDL_WINDOW_SHOWN);
+    window = SDL_CreateWindow("game", SDL_WINDOWPOS_UNDEFINED, 
+                                        SDL_WINDOWPOS_UNDEFINED, 800, 800, 
+                                        SDL_WINDOW_OPENGL |
+                                        SDL_WINDOW_RESIZABLE);
+    context = SDL_GL_CreateContext(window);
+
+    glClearColor(0,0,0,1);
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    float width = .5;
+    GLfloat v1[] = {-width, 0};
+    GLfloat v2[] = {width, 0};
+
+    glColor3f(.0f,.5f,.5f);
+
+    glBegin(GL_LINES);
+        glVertex2fv(v1);
+        glVertex2fv(v2);
+    glEnd();
+
+    SDL_GL_SwapWindow(window);
+
     return 0;
 
 }
@@ -41,6 +60,7 @@ int delay(lua_State *L) {
 
 int quit(lua_State *L) {
     SDL_DestroyWindow(window);
+    SDL_GL_DeleteContext(window);
     return 0;
 }
 

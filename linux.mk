@@ -16,6 +16,6 @@
 # Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 # 
 CC = gcc
-LIBS = -llua5.4 -lSDL2
+LIBS = -llua5.4 -lSDL2 -lGL
 EXTRA = -fPIC
 CCFLAGE = 

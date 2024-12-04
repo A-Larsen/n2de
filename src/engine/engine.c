@@ -17,8 +17,6 @@
  */
 #include "engine.h"
 
-char *init_file = NULL;
-
 int main(int argc, char* argv[]) {
     lua_State *L = luaL_newstate();
     luaL_openlibs(L);
