@@ -8,3 +8,8 @@ to `NULL` after freeing data.
 == Documentation
 - https://www.khronos.org/opengl/wiki/Image_Load_Store[opengl]
 - https://docs.gl/gl4/glClearColor[docs.gl]
+- https://www.lua.org/manual/5.4/[lua5.4]
+- https://www.doxygen.nl/manual/docblocks.html[doxygen]
+- https://wiki.libsdl.org/SDL2/FrontPage[SDL2]
+- https://docs.gtk.org/gtk4/[gtk4]
+- https://docs.github.com/en/communities/documenting-your-project-with-wikis/about-wikis[github wiki]
