@@ -19,9 +19,9 @@ build: src/engine/*.c
 	@eval ./scripts/game_folder_check $(GAME_NAME)
 	$(CC) $^ $(CCFLAGS) -o $(GAME_NAME)/$(GAME_NAME)$(EXECEXTENSION) $(LIBS)
 
-stdlib: ./src/engine/error.c ./src/lua_libraries/stdlib.c
+lib: ./src/engine/error.c ./src/lua_libraries/$(LIB).c
 	$(CC) $^ $(CCFLAGS) -shared $(EXTRA) -o lib$(LIBEXTENSION) $(LIBS)
-	mv lib$(LIBEXTENSION) $(GAME_NAME)/stdlib/
+	mv lib$(LIBEXTENSION) $(GAME_NAME)/$(LIB)/
 
 clean:
 	rm -rf game/*.exe *.exe *.obj $(GAME_NAME)/$(GAME_NAME)

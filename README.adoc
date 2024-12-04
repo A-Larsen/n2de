@@ -52,29 +52,29 @@ make LINUX=true
 
 ==== Windows
 ----
-make libs
+make lib LIB=<lib name>
 ----
 
 ==== Linux
 ----
-make LINUX=true libs
+make lib LINUX=true LIB=<lib name>
 ----
 
-NOTE: You must build the engine and libs for the game to run!
+NOTE: You must build the engine and the stdlib lib for the game to run!
 
 == Running
 
 linux
 
 ----
-cd game
+cd <name of game>
 ./<name of game>
 ----
 
 window
 
 ----
-cd game
+cd <name of game>
 ./<name of game>.exe
 ----
 
