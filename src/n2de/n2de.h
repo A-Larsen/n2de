@@ -1,6 +1,6 @@
-#ifndef _ENGINE_H_
-#define _ENGINE_H_
+#ifndef _N2DE_H_
+#define _N2DE_H_
 #define SDL_main main
 #include "../global.h"
 #include "./error.h"
-#endif // _ENGINE_H_
+#endif // _N2De_H_

@@ -18,9 +18,9 @@
 ├── Makefile
 ├── README.adoc
 ├── src
-│   ├── engine <---------------------│ Engine written in C here
-│   │   ├── engine.c <----│ Entry point for game engine
-│   │   ├── engine.h <----│
+│   ├── n2de <---------------------│ Engine written in C here
+│   │   ├── n2de <----│ Entry point for game engine
+│   │   ├── n2de.h <----│
 │   │   ├── error.c <---│ Logging errors
 │   │   └── error.h <---│ 
 │   ├── global.h
@@ -93,6 +93,7 @@ cd <name of game>
 - lua5.4.dll
 - libsdl2-dev
 - liblua5.4-dev
+- libgl1-mesa-glx (libGL.so)
 
 == Todo
 - [ ] Use https://doxygen.nl/index.html[doxygen] for documentation

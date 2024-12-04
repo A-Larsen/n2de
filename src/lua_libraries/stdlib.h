@@ -20,7 +20,7 @@
 
 #include <GL/gl.h>
 #include "../global.h"
-#include "../engine/error.h"
+#include "../n2de/error.h"
 
 #define SCREEN_WIDTH_PX 1600
 #define SCREEN_HEIGHT_PX 800
