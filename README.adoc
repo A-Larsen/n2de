@@ -48,12 +48,12 @@ make LINUX=true
 
 === building libs
 
-==== WINDOWS
+==== Windos
 ----
 make libs
 ----
 
-==== LINUX
+==== Linux
 ----
 make LINUX=true libs
 ----
