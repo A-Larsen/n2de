@@ -31,7 +31,8 @@
 
 You must compile in linux The game will be able to run in linux or windows. WSL
 is perfectly exceptable. Make sure to edit the path of the `LIBS` variable in
-`windows.mk` to the appropriate path for lua54.lib and SDL2.lib
+_windows.mk_ to the appropriate path for lua54.lib and SDL2.lib. To change other
+game related variables like the name of the game check _config.mk_
 
 === building engine
 
@@ -66,14 +67,14 @@ linux
 
 ----
 cd game
-./game
+./<name of game>
 ----
 
 window
 
 ----
 cd game
-./game.exe
+./<name of game>.exe
 ----
 
 === Dependencies
