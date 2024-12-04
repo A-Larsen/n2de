@@ -1,4 +1,4 @@
-local libs = require("stdlib")
+local libs = require("libs.stdlib")
 print("hello from lua!")
 libs.init()
 libs.createWindow()

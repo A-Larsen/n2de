@@ -52,7 +52,7 @@ luaL_Reg test[] = {
     {NULL, NULL}
 };
 
-int luaopen_stdlib_lib(lua_State *L)
+int luaopen_libs_stdlib_lib(lua_State *L)
 {
     luaL_newlib(L, test);
     return 1;

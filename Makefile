@@ -38,7 +38,7 @@ build: src/engine/*.c
 
 lib: ./src/engine/error.c ./src/lua_libraries/$(LIB).c
 	$(CC) $^ $(CCFLAGS) -shared $(EXTRA) -o lib$(LIBEXTENSION) $(LIBS)
-	mv lib$(LIBEXTENSION) $(GAME_NAME)/$(LIB)/
+	mv lib$(LIBEXTENSION) $(GAME_NAME)/libs/$(LIB)/
 
 clean:
 	rm -rf game/*.exe *.exe *.obj $(GAME_NAME)/$(GAME_NAME)
