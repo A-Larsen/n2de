@@ -13,3 +13,4 @@ to `NULL` after freeing data.
 - https://wiki.libsdl.org/SDL2/FrontPage[SDL2]
 - https://docs.gtk.org/gtk4/[gtk4]
 - https://docs.github.com/en/communities/documenting-your-project-with-wikis/about-wikis[github wiki]
+- https://sqlite.org/docs.html[sqlite]
