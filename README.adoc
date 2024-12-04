@@ -22,9 +22,9 @@
 │   │   ├── error.c <---│ Logging errors
 │   │   └── error.h <---│ 
 │   ├── global.h
-│   └── lua-libs <-------------------- Create dll libs for lua
-│       ├── libs.c <----│ Basic c Libraries for lua
-│       └── libs.h <----│
+│   └── lua-libraries <--------------------│ Create dll libs for lua
+│       ├── stdlib.c <----│ Basic c Libraries for lua
+│       └── stdlib.h <----│
 └── windows.mk <-----│ compiling configuration for windows
 ----
 
