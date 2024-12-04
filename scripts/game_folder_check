@@ -1,7 +1,5 @@
-#!/usr/bin/env perl
-
-my $game_name = $ARGV[0];
-
-if (! -d $game_name) {
-    mkdir $game_name
-}
+#!/usr/bin/env bash
+if [[ ! -d "$1" ]]; then
+    mkdir "$1"
+    cp -r game_template/* "$1" 
+fi

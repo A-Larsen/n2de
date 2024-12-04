@@ -1,1 +1,1 @@
-GAME_NAME = game
+GAME_NAME = test

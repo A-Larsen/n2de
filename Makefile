@@ -16,6 +16,7 @@ else
 endif
 
 build: src/engine/*.c
+	@eval ./scripts/game_folder_check $(GAME_NAME)
 	$(CC) $^ $(CCFLAGS) -o $(GAME_NAME)/$(GAME_NAME)$(EXECEXTENSION) $(LIBS)
 
 stdlib: ./src/engine/error.c ./src/lua_libraries/stdlib.c
