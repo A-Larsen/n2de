@@ -32,7 +32,7 @@ else
 	CCFLAGS += -D _WIN32
 endif
 
-build: src/n2de/*.c
+$(GAME_NAME): src/n2de/*.c
 	@eval ./scripts/game_folder_check $(GAME_NAME)
 	$(CC) $^ $(CCFLAGS) -o $(GAME_NAME)/$(GAME_NAME)$(EXECEXTENSION) $(LIBS)
 
