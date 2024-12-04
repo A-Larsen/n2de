@@ -1,0 +1,73 @@
+== SDL, C and Lua Game outline
+=== Directories
+----
+.
+├── docs
+│   └── notes.adoc
+├── game <--------------------- editable lua files for bulk of game code
+│   ├── init.lua
+│   ├── libs
+│   │   ├── init.lua
+│   │   ├── lib.dll
+│   │   └── lib.so
+│   └── platty_the_platformer.exe
+├── linux.mk
+├── Makefile
+├── README.adoc
+├── src
+│   ├── global.h
+│   ├── lua-libs <--------- create dll libs to use in lua
+│   │   ├── libs.c
+│   │   └── libs.h
+│   └── PTPE <------------- Engine writen in C goes here
+│       ├── error.c
+│       ├── error.h
+│       ├── ptpe.c
+│       └── ptpe.h
+└── windows.mk
+----
+
+== Compiling
+
+You must compile in linux The game will be able to run in linux or windows. WSL
+is perfectly exceptable. Make sure to edit the path of the `LIBS` variable in
+`windows.mk` to the appropriate path for lua54.lib and SDL2.lib
+
+=== building engine
+----
+make
+----
+
+=== building libs
+----
+make libs
+----
+
+NOTE: You must build the engine and libs for the game to run!
+
+== Running
+
+linux
+
+----
+cd game
+./game
+----
+
+window
+
+----
+cd game
+./game.exe
+----
+
+=== Dependencies
+- Mingw - x86_64-w64-mingw32-gcc
+- gcc
+- SDL2.lib
+- SDL2.dll
+- lua5.4.exe
+- lua5.4.lib
+- lua5.4.dll
+- libsdl2-dev
+- liblua5.4-dev

@@ -1,0 +1,6 @@
+== Pointers
+*ALWAYS* initialize to `NULL`. use `assert()` to check if null when needed. Set back
+to `NULL` after freeing data.
+
+== Compiling
+- https://stackoverflow.com/questions/714100/os-detecting-makefile#12099167[Detecting OS in Makefile]
