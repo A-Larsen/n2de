@@ -15,6 +15,10 @@
 # this program; if not, write to the Free Software Foundation, Inc., 51
 # Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 # 
-LIBS = /mnt/c/Libraries/lua54/lua54.lib /mnt/c/Libraries/SDL2/SDL2.lib
 CC = x86_64-w64-mingw32-gcc
+
+LIBS = /mnt/c/Libraries/lua54/lua54.lib \
+	   /mnt/c/Libraries/SDL2/SDL2.lib
+
+SHARED = -shared
 CFLAGS =

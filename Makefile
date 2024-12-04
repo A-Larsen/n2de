@@ -37,7 +37,7 @@ build: src/n2de/*.c
 	$(CC) $^ $(CCFLAGS) -o $(GAME_NAME)/$(GAME_NAME)$(EXECEXTENSION) $(LIBS)
 
 lib: ./src/n2de/error.c ./src/lua_libraries/$(LIB).c
-	$(CC) $^ $(CCFLAGS) -shared $(EXTRA) -o lib$(LIBEXTENSION) $(LIBS)
+	$(CC) $^ $(CCFLAGS) $(SHARED) -o lib$(LIBEXTENSION) $(LIBS)
 	mv lib$(LIBEXTENSION) $(GAME_NAME)/libs/$(LIB)/
 
 clean:

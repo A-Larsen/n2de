@@ -21,5 +21,5 @@ LIBS =  $(shell pkg-config --cflags --libs lua5.4) \
 		$(shell pkg-config --cflags --libs sdl2)  \
 		$(shell pkg-config --cflags --libs gl)
 
-EXTRA = -fPIC
+SHARED = -shared -fPIC
 CCFLAGE = 
