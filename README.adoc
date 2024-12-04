@@ -97,3 +97,5 @@ cd <name of game>
 == Todo
 - [ ] Use https://doxygen.nl/index.html[doxygen] for documentation
 - [ ] Create github wiki page for more detailed information
+- [ ] Switch to SDL3
+- [ ] Use GTK for gui elements of engine (not game)
