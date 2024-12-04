@@ -14,7 +14,7 @@
 │            │                 │ engine.
 │            └── lib.so
 ├── LICENSE
-├── linux.mk <------│ compiling configuration for linux
+├── linux.mk <------│ Compiling configuration for linux
 ├── Makefile
 ├── README.adoc
 ├── src
