@@ -4,3 +4,7 @@ to `NULL` after freeing data.
 
 == Compiling
 - https://stackoverflow.com/questions/714100/os-detecting-makefile#12099167[Detecting OS in Makefile]
+
+== Documentation
+- https://www.khronos.org/opengl/wiki/Image_Load_Store[opengl]
+- https://docs.gl/gl4/glClearColor[docs.gl]
