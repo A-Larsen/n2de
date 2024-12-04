@@ -2,28 +2,28 @@
 === Directories
 ----
 .
+├── config.mk
 ├── docs
 │   └── notes.adoc
-├── game <--------------------- editable lua files for bulk of game code
+├── game <--------------------- Editable lua files for bulk of game logic
 │   ├── init.lua
-│   ├── libs
-│   │   ├── init.lua
-│   │   ├── lib.dll
-│   │   └── lib.so
-│   └── platty_the_platformer.exe
+│   └── libs
+│       ├── init.lua
+│       └── lib.so
+├── LICENSE
 ├── linux.mk
 ├── Makefile
 ├── README.adoc
 ├── src
+│   ├── engine <-------------------------- Engine written in C here
+│   │   ├── engine.c
+│   │   ├── engine.h
+│   │   ├── error.c
+│   │   └── error.h
 │   ├── global.h
-│   ├── lua-libs <--------- create dll libs to use in lua
-│   │   ├── libs.c
-│   │   └── libs.h
-│   └── PTPE <------------- Engine writen in C goes here
-│       ├── error.c
-│       ├── error.h
-│       ├── ptpe.c
-│       └── ptpe.h
+│   └── lua-libs <-------------------- Create dll libs for lua
+│       ├── libs.c
+│       └── libs.h
 └── windows.mk
 ----
 
