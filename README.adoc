@@ -6,7 +6,7 @@
 ├── docs
 │   └── notes.adoc
 ├── <game name> <--------------------│ Editable lua files for bulk of game logic
-│   ├── init.lua
+│   ├── init.lua <----------------│ Entry point for game scripting
 │   └── libs <-----------------| C libraries are added here. The library
 │         │                    │ Classes can be modified
 │         └── stdlibs
