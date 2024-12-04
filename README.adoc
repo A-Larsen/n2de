@@ -5,7 +5,7 @@
 ├── config.mk <---- global compiling configuration
 ├── docs
 │   └── notes.adoc
-├── game <--------------------│ Editable lua files for bulk of game logic
+├── <game name> <--------------------│ Editable lua files for bulk of game logic
 │   ├── init.lua
 │   └── libs
 │       ├── init.lua <----│ Init for basic lua c libraries.
