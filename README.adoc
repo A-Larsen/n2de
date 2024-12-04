@@ -34,13 +34,28 @@ is perfectly exceptable. Make sure to edit the path of the `LIBS` variable in
 `windows.mk` to the appropriate path for lua54.lib and SDL2.lib
 
 === building engine
+
+==== Window
 ----
 make
 ----
 
+==== Linux
+
+----
+make LINUX=true
+----
+
 === building libs
+
+==== WINDOWS
 ----
 make libs
+----
+
+==== LINUX
+----
+make LINUX=true libs
 ----
 
 NOTE: You must build the engine and libs for the game to run!
