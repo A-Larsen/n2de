@@ -33,9 +33,10 @@
 == Compiling
 
 You must compile in linux. The game will be able to run in linux and windows.
-WSL is perfectly exceptable to compile in. Make sure to edit the path of the
-`LIBS` variable in _windows.mk_ to the appropriate values. To change other game
-related variables like the name of the game check _config.mk_.
+WSL is perfectly exceptable to compile in. Make sure to edit the paths of the
+`LIBS` variable in _windows.mk_ and the includes of_src/config.h_ to the
+appropriate values. To change other game related variables like the name of the
+game check _config.mk_.
 
 === Building engine
 
