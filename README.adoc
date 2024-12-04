@@ -1,4 +1,4 @@
-== SDL, C and Lua Game outline
+== N2DE (Nyquist 2D Engine)
 === Directories
 ----
 .
