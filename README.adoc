@@ -2,7 +2,7 @@
 === Directories
 ----
 .
-├── config.mk <---- global compiling configuration
+├── config.mk <---- Global compiling configuration
 ├── docs
 │   └── notes.adoc
 ├── <game name> <--------------------│ Editable lua files for bulk of game logic
@@ -37,7 +37,7 @@ WSL is perfectly exceptable to compile in. Make sure to edit the path of the
 `LIBS` variable in _windows.mk_ to the appropriate values. To change other game
 related variables like the name of the game check _config.mk_.
 
-=== building engine
+=== Building engine
 
 Windows
 
@@ -51,7 +51,7 @@ Linux
 make LINUX=true
 ----
 
-=== building libs
+=== Building libs
 
 Windows
 
@@ -59,7 +59,8 @@ Windows
 make lib LIB=<lib name>
 ----
 
-==== Linux
+Linux
+
 ----
 make lib LINUX=true LIB=<lib name>
 ----
@@ -93,6 +94,6 @@ cd <name of game>
 - libsdl2-dev
 - liblua5.4-dev
 
-== TODO
+== Todo
 - [ ] Use https://doxygen.nl/index.html[doxygen] for documentation
 - [ ] Create github wiki page for more detailed information
