@@ -16,6 +16,10 @@
 # Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 # 
 CC = gcc
-LIBS = -llua5.4 -lSDL2 -lGL
+
+LIBS =  $(shell pkg-config --cflags --libs lua5.4) \
+		$(shell pkg-config --cflags --libs sdl2)  \
+		$(shell pkg-config --cflags --libs gl)
+
 EXTRA = -fPIC
 CCFLAGE = 
