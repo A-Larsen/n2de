@@ -1,0 +1,7 @@
+#!/usr/bin/env perl
+
+my $game_name = $ARGV[0];
+
+if (! -d $game_name) {
+    mkdir $game_name
+}

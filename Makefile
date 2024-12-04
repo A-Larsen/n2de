@@ -1,5 +1,7 @@
 include config.mk
 
+SHELL := /bin/bash
+
 EXECEXTENSION=
 
 # determine operating system
@@ -14,13 +16,14 @@ else
 endif
 
 build: src/engine/*.c
-	$(CC) $^ $(CCFLAGS) -o game/$(GAME_NAME)$(EXECEXTENSION) $(LIBS)
+	$(CC) $^ $(CCFLAGS) -o $(GAME_NAME)/$(GAME_NAME)$(EXECEXTENSION) $(LIBS)
 
-libs: ./src/engine/error.c ./src/lua-libs/libs.c
+stdlib: ./src/engine/error.c ./src/lua_libraries/stdlib.c
 	$(CC) $^ $(CCFLAGS) -shared $(EXTRA) -o lib$(LIBEXTENSION) $(LIBS)
-	mv lib$(LIBEXTENSION) game/libs/
+	mv lib$(LIBEXTENSION) $(GAME_NAME)/stdlib/
 
 clean:
-	rm -rf game/*.exe *.exe *.obj game/$(GAME_NAME)
+	rm -rf game/*.exe *.exe *.obj $(GAME_NAME)/$(GAME_NAME)
+
 
 .PHONY: clean
