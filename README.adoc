@@ -7,11 +7,11 @@
 │   └── notes.adoc
 ├── <game name> <--------------------│ Editable lua files for bulk of game logic
 │   ├── init.lua
-│   └── libs
+│   └── libs <-----------------| C libraries are added here. The library
+│         │                    │ Classes can be modified
 │         └── stdlibs
 │            ├── init.lua <----│ Init for basic standard lua c libraries for 
 │            │                 │ engine.
-│            │                 │ The class can be modifiesd and added to
 │            └── lib.so
 ├── LICENSE
 ├── linux.mk <------│ compiling configuration for linux
@@ -24,10 +24,10 @@
 │   │   ├── error.c <---│ Logging errors
 │   │   └── error.h <---│ 
 │   ├── global.h
-│   └── lua-libraries <--------------------│ Create dll libs for lua
+│   └── lua-libraries <--------------------│ Write C libraries for lua here
 │       ├── stdlib.c <----│ Basic c Libraries for lua
 │       └── stdlib.h <----│
-└── windows.mk <-----│ compiling configuration for windows
+└── windows.mk <-----│ Compiling configuration for windows
 ----
 
 == Compiling
