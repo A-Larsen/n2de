@@ -1,2 +1,0 @@
-== TODO
-- [ ] use https://doxygen.nl/index.html[doxygen] for documentation

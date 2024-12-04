@@ -88,3 +88,6 @@ cd game
 - lua5.4.dll
 - libsdl2-dev
 - liblua5.4-dev
+
+== TODO
+- [ ] use https://doxygen.nl/index.html[doxygen] for documentation
