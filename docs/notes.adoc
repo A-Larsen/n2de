@@ -3,6 +3,8 @@
 to `NULL` after freeing data.
 
 == Compiling
+place libraries and include files in _/usr/x86_64-w64-mingw32/_.
+
 - https://stackoverflow.com/questions/714100/os-detecting-makefile#12099167[Detecting OS in Makefile]
 - https://medium.com/@bhargav.chippada/how-to-setup-opengl-on-mingw-w64-in-windows-10-64-bits-b77f350cea7e[mingw opengl]
 - https://stackoverflow.com/questions/7909358/how-do-i-know-which-version-of-opengl-i-am-using[checking opengl version]
@@ -15,7 +17,7 @@ to `NULL` after freeing data.
 - https://medium.com/@bhargav.chippada/how-to-setup-opengl-on-mingw-w64-in-windows-10-64-bits-b77f350cea7e[opengl and mingw]
 - https://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-locally-and-remotely#2003515[Removing a remote branch]
 - https://packages.msys2.org/base/mingw-w64-glfw[mingw package lookup]
-(look in _/usr/x86_64-w64-mingw32/_)
+- http://lua.sqlite.org/index.cgi/doc/tip/doc/lsqlite3.wiki[sqlite wrapper for lua]
 
 == Git
  Removing a remote branch
@@ -30,7 +32,6 @@ to `NULL` after freeing data.
  git branch -d {local_branch}
  ----
 
-
 == Documentation
 - https://www.khronos.org/opengl/wiki/Image_Load_Store[opengl]
 - https://docs.gl/gl4/glClearColor[docs.gl]
@@ -40,3 +41,4 @@ to `NULL` after freeing data.
 - https://docs.gtk.org/gtk4/[gtk4]
 - https://docs.github.com/en/communities/documenting-your-project-with-wikis/about-wikis[github wiki]
 - https://sqlite.org/docs.html[sqlite]
+- http://lua.sqlite.org/index.cgi/doc/tip/doc/lsqlite3.wiki[lua sqlite]
