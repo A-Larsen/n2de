@@ -55,7 +55,7 @@ int createWindow(lua_State *L) {
 }
 
 int delay(lua_State *L) {
-    SDL_Delay(10000);
+    SDL_Delay(1000);
     return 0;
 }
 
