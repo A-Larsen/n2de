@@ -17,9 +17,11 @@
 # 
 CC = gcc
 
-LIBS =  $(shell pkg-config --cflags --libs lua5.4) \
+LIBS =  -lm \
+		$(shell pkg-config --cflags --libs lua5.4) \
 		$(shell pkg-config --cflags --libs sdl2)  \
-		$(shell pkg-config --cflags --libs gl)
+		$(shell pkg-config --cflags --libs gl) \
+		$(shell pkg-config --cflags --libs sqlite3)
 
 SHARED = -shared -fPIC
 CCFLAGE = 
