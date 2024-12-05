@@ -4,9 +4,13 @@ to `NULL` after freeing data.
 
 == Compiling
 - https://stackoverflow.com/questions/714100/os-detecting-makefile#12099167[Detecting OS in Makefile]
+- https://medium.com/@bhargav.chippada/how-to-setup-opengl-on-mingw-w64-in-windows-10-64-bits-b77f350cea7e[mingw opengl]
 
 == Graphic Buffers
 - https://www.songho.ca/opengl/gl_pbo.html[PBO]
+
+== Links
+- https://medium.com/@bhargav.chippada/how-to-setup-opengl-on-mingw-w64-in-windows-10-64-bits-b77f350cea7e
 
 == Documentation
 - https://www.khronos.org/opengl/wiki/Image_Load_Store[opengl]
