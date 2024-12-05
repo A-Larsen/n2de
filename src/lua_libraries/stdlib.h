@@ -18,7 +18,6 @@
 #ifndef _N2DE_STDLIB_H_
 #define _N2DE_STDLIB_H_
 
-#include <GL/gl.h>
 #include "../config.h"
 #include "../n2de/error.h"
 
