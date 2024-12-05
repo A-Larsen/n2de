@@ -32,6 +32,7 @@ int createWindow(lua_State *L) {
                                         SDL_WINDOW_OPENGL |
                                         SDL_WINDOW_RESIZABLE);
     context = SDL_GL_CreateContext(window);
+    printf("opengl version: %s\n", glGetString(GL_VERSION));
 
     glClearColor(0,0,0,1);
     glClear(GL_COLOR_BUFFER_BIT);
