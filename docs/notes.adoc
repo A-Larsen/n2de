@@ -6,6 +6,7 @@ to `NULL` after freeing data.
 - https://stackoverflow.com/questions/714100/os-detecting-makefile#12099167[Detecting OS in Makefile]
 - https://medium.com/@bhargav.chippada/how-to-setup-opengl-on-mingw-w64-in-windows-10-64-bits-b77f350cea7e[mingw opengl]
 - https://stackoverflow.com/questions/7909358/how-do-i-know-which-version-of-opengl-i-am-using[checking opengl version]
+- https://www.reddit.com/r/techsupport/comments/1alam8g/how_do_i_check_what_open_gl_version_i_have/[checking opengl version through window gui]
 
 == Graphic Buffers
 - https://www.songho.ca/opengl/gl_pbo.html[PBO]
