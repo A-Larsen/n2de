@@ -19,7 +19,7 @@ CC = x86_64-w64-mingw32-gcc
 
 LIBS = -lopengl32\
 	   /mnt/c/Libraries/lua54/lua54.lib \
-	   /mnt/c/Libraries/SDL2/SDL2.lib
+	   /mnt/c/Libraries/SDL2-2.30.9/lib/x64/SDL2.lib
 
 SHARED = -shared
 CFLAGS =

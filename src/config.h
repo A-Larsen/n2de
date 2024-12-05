@@ -21,10 +21,10 @@
 #include <stdio.h>
 #include <stdbool.h>
 #if defined(_WIN32)
-#include "/mnt/c/Libraries/lua54/headers/lua.h"
-#include "/mnt/c/Libraries/lua54/headers/lauxlib.h"
-#include "/mnt/c/Libraries/lua54/headers/lualib.h"
-#include "/mnt/c/Libraries/SDL2/headers/SDL.h"
+#include "/mnt/c/Libraries/lua54/include/lua.h"
+#include "/mnt/c/Libraries/lua54/include/lauxlib.h"
+#include "/mnt/c/Libraries/lua54/include/lualib.h"
+#include "/mnt/c/Libraries/SDL2-2.30.9/include/SDL.h"
 #else
 #include <lua5.4/lua.h>
 #include <lua5.4/lauxlib.h>

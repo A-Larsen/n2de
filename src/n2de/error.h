@@ -20,12 +20,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include <stdio.h>
-
-#if defined(_WIN32)
-#include "/mnt/c/Libraries/SDL2/headers/SDL_error.h"
-#else
-#include <SDL2/SDL_error.h>
-#endif
+#include "../config.h"
 
 void PTP_LOG_ERROR(bool condition, char *str);
 #endif // _N2DE_ERROR_H_
