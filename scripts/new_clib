@@ -27,7 +27,7 @@ cat > ./src/lua_libraries/${libname}.h <<EOF
 #endif // _N2DE_${libname}_H_
 EOF
 
-cat > ./src/lua_libraries/${libname}.c <<EOF
+cat > ./src/lua_libraries/${libname}/${libname}.c <<EOF
 /* 
  * Copyright (C) 2024  Austin Larsen
  * 

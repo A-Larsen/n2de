@@ -38,10 +38,11 @@ $(GAME_NAME): src/n2de/*.c
 
 lib: ./src/n2de/error.c ./src/lua_libraries/$(LIB).c
 	$(CC) $^ $(CCFLAGS) $(SHARED) -o lib$(LIBEXTENSION) $(LIBS)
+	mkdir -p $(GAME_NAME)/libs/$(LIB)
 	mv lib$(LIBEXTENSION) $(GAME_NAME)/libs/$(LIB)/
 
 clean:
-	rm -rf game/*.exe *.exe *.obj $(GAME_NAME)/$(GAME_NAME)
+	rm -rf $(GAME_NAME)/$(GAME_NAME) $(GAME_NAME)/$(GAME_NAME).exe
 
 
 .PHONY: clean
