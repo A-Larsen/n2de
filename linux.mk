@@ -18,6 +18,8 @@
 CC = gcc
 
 LIBS =  -lm \
+		-lGLEW \
+		-lglfw \
 		$(shell pkg-config --cflags --libs lua5.4) \
 		$(shell pkg-config --cflags --libs sdl2)  \
 		$(shell pkg-config --cflags --libs gl) \
