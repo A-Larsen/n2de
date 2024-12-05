@@ -36,6 +36,10 @@ all: n2de database error files memory
 	@eval ./scripts/game_folder_check $(GAME_NAME)
 	$(CC) $(CCFLAGS) -o $(GAME_NAME)/$(GAME_NAME)$(EXECEXTENSION) *.o $(LIBS)
 
+$(GAME_NAME): test/test$(EXECEXTENSION)
+	@eval ./scripts/game_folder_check $(GAME_NAME)
+	$(CC) $(CCFLAGS) -o $(GAME_NAME)/$(GAME_NAME)$(EXECEXTENSION) *.o $(LIBS)
+
 n2de: src/n2de/n2de.c
 	$(CC) -c $^ -o $@.o
 
@@ -58,6 +62,5 @@ lib: ./src/n2de/error.c ./src/lua_libraries/$(LIB).c
 
 clean:
 	rm -rf $(GAME_NAME)/$(GAME_NAME) $(GAME_NAME)/$(GAME_NAME).exe *.o
-
 
 .PHONY: clean
