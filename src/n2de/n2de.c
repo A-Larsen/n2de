@@ -16,15 +16,61 @@
  * Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 #include "n2de.h"
+#include <GL/glew.h>
+#include <GL/gl.h>
+#include <GLFW/glfw3.h>
 
+GLFWwindow *window = NULL;
 int main(int argc, char* argv[]) {
-    lua_State *L = luaL_newstate();
-    luaL_openlibs(L);
+    glfwInit();
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    if (luaL_dofile(L, "./init.lua") != LUA_OK)
-        N2DE_ERROR("Error reading script");
+    window = glfwCreateWindow(800, 800, "game", NULL, NULL);
+    if (window == NULL) {
+        N2DE_ERROR("could not create glfw window\n");
+        glfwTerminate();
+        exit(1);
+    }
+    glfwMakeContextCurrent(window);
+    GLenum err = glewInit();
+    if (err != GLEW_OK) {
+        N2DE_ERROR("could not initialize glew\n");
+    }
+    glViewport(0, 0, 800, 800);
+    printf("opengl version: %s\n", glGetString(GL_VERSION));
 
-    lua_close(L);
+    while (!glfwWindowShouldClose(window)) {
+        glClearColor(.5,0,0,1);
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        float width = .5;
+        GLfloat v1[] = {-width, 0};
+        GLfloat v2[] = {width, 0};
+
+        glColor3f(.0f,.5f,.5f);
+
+        glBegin(GL_LINES);
+            glVertex2fv(v1);
+            glVertex2fv(v2);
+        glEnd();
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+
+    }
+
+
+    /* lua_State *L = luaL_newstate(); */
+    /* luaL_openlibs(L); */
+
+    /* if (luaL_dofile(L, "./init.lua") != LUA_OK) */
+    /*     N2DE_ERROR("Error reading script"); */
+
+    /* lua_close(L); */
+
+    glfwDestroyWindow(window);
+    glfwTerminate();
 
     return 0;
 }

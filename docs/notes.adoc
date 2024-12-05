@@ -14,6 +14,8 @@ to `NULL` after freeing data.
 == Links
 - https://medium.com/@bhargav.chippada/how-to-setup-opengl-on-mingw-w64-in-windows-10-64-bits-b77f350cea7e[opengl and mingw]
 - https://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-locally-and-remotely#2003515[Removing a remote branch]
+- https://packages.msys2.org/base/mingw-w64-glfw[mingw package lookup]
+(look in _/usr/x86_64-w64-mingw32/_)
 
 == Git
  Removing a remote branch
