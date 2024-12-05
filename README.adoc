@@ -36,7 +36,8 @@ You must compile in linux. The game will be able to run in linux and windows.
 WSL is perfectly exceptable to compile in. Make sure to edit the paths of the
 `LIBS` variable in _windows.mk_ and the includes of_src/config.h_ to the
 appropriate values. To change other game related variables like the name of the
-game check _config.mk_.
+game check _config.mk_. The Required DLL files need to game in the root folder
+for the game directory.
 
 === Building engine
 
