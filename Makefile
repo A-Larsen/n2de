@@ -32,9 +32,24 @@ else
 	CCFLAGS += -D _WIN32
 endif
 
-$(GAME_NAME): src/n2de/*.c
+all: n2de database error files memory
 	@eval ./scripts/game_folder_check $(GAME_NAME)
-	$(CC) $^ $(CCFLAGS) -o $(GAME_NAME)/$(GAME_NAME)$(EXECEXTENSION) $(LIBS)
+	$(CC) $(CCFLAGS) -o $(GAME_NAME)/$(GAME_NAME)$(EXECEXTENSION) *.o $(LIBS)
+
+n2de: src/n2de/n2de.c
+	$(CC) -c $^ -o $@.o
+
+database: src/n2de/database.c
+	$(CC) -c $^ -o $@.o
+
+error: src/n2de/error.c 
+	$(CC) -c $^ -o $@.o
+
+files: src/n2de/files.c
+	$(CC) -c $^ -o $@.o
+
+memory: src/n2de/memory.c
+	$(CC) -c $^ -o $@.o
 
 lib: ./src/n2de/error.c ./src/lua_libraries/$(LIB).c
 	$(CC) $^ $(CCFLAGS) $(SHARED) -o lib$(LIBEXTENSION) $(LIBS)
@@ -42,7 +57,7 @@ lib: ./src/n2de/error.c ./src/lua_libraries/$(LIB).c
 	mv lib$(LIBEXTENSION) $(GAME_NAME)/libs/$(LIB)/
 
 clean:
-	rm -rf $(GAME_NAME)/$(GAME_NAME) $(GAME_NAME)/$(GAME_NAME).exe
+	rm -rf $(GAME_NAME)/$(GAME_NAME) $(GAME_NAME)/$(GAME_NAME).exe *.o
 
 
 .PHONY: clean

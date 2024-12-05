@@ -16,3 +16,4 @@
 # Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 # 
 GAME_NAME = test
+VERSION = 0.0.0.1
