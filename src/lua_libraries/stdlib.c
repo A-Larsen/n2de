@@ -16,43 +16,60 @@
  * Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 #include "stdlib.h"
-/* SDL_Window *window = NULL; */
-/* SDL_GLContext context = NULL; */
+GLFWwindow *window = NULL;
 
 int init(lua_State *L) {
-    /* if (SDL_Init(SDL_INIT_VIDEO) != 0) */
-    /*     N2DE_ERROR("Cannot init video"); */
-
-    /* printf("sup man!\n"); */
+    glfwInit();
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     return 0;
 }
 
 int createWindow(lua_State *L) {
-    /* window = SDL_CreateWindow("game", SDL_WINDOWPOS_UNDEFINED, */ 
-    /*                                     SDL_WINDOWPOS_UNDEFINED, 800, 800, */ 
-    /*                                     SDL_WINDOW_OPENGL | */
-    /*                                     SDL_WINDOW_RESIZABLE); */
-    /* context = SDL_GL_CreateContext(window); */
+    window = glfwCreateWindow(800, 800, "game", NULL, NULL);
+    if (window == NULL) {
+        N2DE_ERROR("could not create glfw window\n");
+        glfwTerminate();
+        exit(1);
+    }
+    glfwMakeContextCurrent(window);
+    GLenum err = glewInit();
+    if (err != GLEW_OK) {
+        N2DE_ERROR("could not initialize glew\n");
+    }
+    glViewport(0, 0, 800, 800);
+    printf("opengl version: %s\n", glGetString(GL_VERSION));
 
     /* GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER); */
 
+    glClearColor(.5,0,0,1);
+    glClear(GL_COLOR_BUFFER_BIT);
 
-    /* SDL_GL_SwapWindow(window); */
+    float width = .5;
+    GLfloat v1[] = {-width, 0};
+    GLfloat v2[] = {width, 0};
 
+    glColor3f(.0f,.5f,.5f);
+
+    glBegin(GL_LINES);
+        glVertex2fv(v1);
+        glVertex2fv(v2);
+    glEnd();
+    glfwSwapBuffers(window);
     return 0;
 
 }
 
 int delay(lua_State *L) {
-    /* SDL_Delay(1000); */
+    SDL_Delay(1000);
     return 0;
 }
 
 
 int quit(lua_State *L) {
-    /* SDL_DestroyWindow(window); */
-    /* SDL_GL_DeleteContext(window); */
-    /* SDL_Quit(); */
+    glfwDestroyWindow(window);
+    glfwTerminate();
     return 0;
 }
 

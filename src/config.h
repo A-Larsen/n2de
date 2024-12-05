@@ -34,4 +34,8 @@
 #include <sqlite3.h>
 #endif
 
+#include <GL/glew.h>
+#include <GL/gl.h>
+#include <GLFW/glfw3.h>
+
 #endif // _N2DE_CONFIG_H_
