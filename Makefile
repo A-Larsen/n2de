@@ -36,7 +36,7 @@ all: n2de database error files memory
 	@eval ./scripts/game_folder_check $(GAME_NAME)
 	$(CC) $(CCFLAGS) -o $(GAME_NAME)/$(GAME_NAME)$(EXECEXTENSION) *.o $(LIBS)
 
-$(GAME_NAME): test/test$(EXECEXTENSION)
+$(GAME_NAME): $(GAME_NAME)/$(GAME_NAME)$(EXECEXTENSION)
 	@eval ./scripts/game_folder_check $(GAME_NAME)
 	$(CC) $(CCFLAGS) -o $(GAME_NAME)/$(GAME_NAME)$(EXECEXTENSION) *.o $(LIBS)
 
