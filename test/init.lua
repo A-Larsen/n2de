@@ -1,0 +1,6 @@
+local libs = require("libs.stdlib")
+print("hello from lua!")
+libs.init()
+libs.createWindow()
+libs.delay()
+libs.quit()

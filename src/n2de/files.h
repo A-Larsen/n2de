@@ -1,5 +1,5 @@
 /* 
- * Copyright (C) 2024  Austin Larsen
+ * Copyright (C) 2022  Austin Larsen
  * 
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
@@ -15,16 +15,35 @@
  * this program; if not, write to the Free Software Foundation, Inc., 51
  * Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-#ifndef _N2DE_ERROR_H_
-#define _N2DE_ERROR_H_
+#ifndef N2DE_FILES_H_
+#define N2DE_FILES_H_
+
+#define _GNU_SOURCE
+
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <stdint.h>
 #include <stdarg.h>
-#include "../config.h"
+#include <math.h>
 
-#define N2DE_ERROR(...) \
-    _error(__FILE__, __FUNCTION__, __LINE__,  __VA_ARGS__);
+#ifdef _WIN32
+#include <windows.h>
+#include <io.h>
+#define F_OK 0
+#define access _access
+#define MKDIR(path) CreateDirectoryA((LPCSTR)path, NULL);
+#else
+#include <sys/stat.h>
+#define MKDIR(path) mkdir(path, 0700);
+#include <unistd.h>
+#endif
 
-void _error(const char *file, const char *function, uint16_t line, const char *fmt,...);
+void getDataPath(char *path, const char *type, const uint8_t index);
+void removeDir(const char *path);
+void touch(const char *path);
+int fileno(FILE *stream);
+uint32_t fileSize(FILE *fp);
+long int fileToStr(FILE *fp, char *str);
 
-#endif // _N2DE_ERROR_H_
+#endif // N2DE_FILES_H_

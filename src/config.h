@@ -25,11 +25,13 @@
 #include "/mnt/c/Libraries/lua54/include/lauxlib.h"
 #include "/mnt/c/Libraries/lua54/include/lualib.h"
 #include "/mnt/c/Libraries/SDL2-2.30.9/include/SDL.h"
+#include "/mnt/c/Libraries/sqlite3/include/sqlite3.h"
 #else
 #include <lua5.4/lua.h>
 #include <lua5.4/lauxlib.h>
 #include <lua5.4/lualib.h>
 #include <SDL2/SDL.h>
+#include <sqlite3.h>
 #endif
 
 #endif // _N2DE_CONFIG_H_

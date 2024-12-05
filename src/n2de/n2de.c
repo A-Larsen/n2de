@@ -20,10 +20,11 @@
 int main(int argc, char* argv[]) {
     lua_State *L = luaL_newstate();
     luaL_openlibs(L);
-    PTP_LOG_ERROR(luaL_dofile(L, "./init.lua") != LUA_OK, 
-            "Error reading script");
+
+    if (luaL_dofile(L, "./init.lua") != LUA_OK)
+        N2DE_ERROR("Error reading script");
+
     lua_close(L);
 
-    SDL_Quit();
     return 0;
 }

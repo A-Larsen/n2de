@@ -20,8 +20,9 @@ SDL_Window *window = NULL;
 SDL_GLContext context = NULL;
 
 int init(lua_State *L) {
-    bool canInit = SDL_Init(SDL_INIT_VIDEO);
-    PTP_LOG_ERROR(canInit != 0, "Cannot init video");
+    if (SDL_Init(SDL_INIT_VIDEO) != 0)
+        N2DE_ERROR("Cannot init video");
+
     printf("sup man!\n");
     return 0;
 }
@@ -62,6 +63,7 @@ int delay(lua_State *L) {
 int quit(lua_State *L) {
     SDL_DestroyWindow(window);
     SDL_GL_DeleteContext(window);
+    SDL_Quit();
     return 0;
 }
 
