@@ -98,7 +98,8 @@ int getKeyTrigger(lua_State *L) {
     static int previous_key = 0;
     int trig_key = lua_tonumber(L, -1);
 
-    lua_pushboolean(L, pressed_key != previous_key && pressed_key == trig_key);
+    if (pressed_key == previous_key) pressed_key = 0;
+    lua_pushnumber(L, pressed_key);
 
     if (pressed_key == released_key)  {
         pressed_key = -1;
