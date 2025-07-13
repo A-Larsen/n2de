@@ -34,6 +34,9 @@ place libraries and include files in _/usr/x86_64-w64-mingw32/_.
 
 == GLFW 
 === GLFW Event Processing
+
+Partially from the https://www.glfw.org/docs/latest/intro_guide.html[intro guide]
+
 GLFW Event Porcessing is not https://stackoverflow.com/questions/2799023/what-exactly-is-a-reentrant-function[reentrant].
 
 GLFW event processing and object destruction are not reentrant. This means that
@@ -45,7 +48,6 @@ the following functions must not be called from any callback function:
 * glfwWaitEvents
 * glfwWaitEventsTimeout
 * glfwTerminate
-
 
 A computer program or routine is described as reentrant if it can be safely
 called again before its previous invocation has been completed (i.e it can be
@@ -80,6 +82,13 @@ Also,
 
 3. Are all recursive and thread-safe functions reentrant?
 
+== Thread Saftey
+The reference documentation for every GLFW function states whether it is limited
+to the main thread.
+
+Initialization, termination, event processing and the creation and destruction
+of windows, cursors and OpenGL and OpenGL ES contexts are all restricted to the
+main thread due to limitations of one or several platforms.
 
 == Documentation
 - https://www.khronos.org/opengl/wiki/Image_Load_Store[opengl]
@@ -91,3 +100,4 @@ Also,
 - https://docs.github.com/en/communities/documenting-your-project-with-wikis/about-wikis[github wiki]
 - https://sqlite.org/docs.html[sqlite]
 - http://lua.sqlite.org/index.cgi/doc/tip/doc/lsqlite3.wiki[lua sqlite]
+- https://www.glfw.org/docs/latest/intro_guide.html[glfw intro guide]
