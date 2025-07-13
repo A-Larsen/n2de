@@ -20,6 +20,8 @@
 static GLFWwindow *window = NULL;
 static int pressed_key = -1;
 static int released_key = -2;
+static int trig_pressed_key = -1;
+static int trig_released_key = -2;
 static bool quit = false;
 
 // callback function go here
@@ -28,10 +30,12 @@ static void keyCallback(GLFWwindow *window, int key, int scancode, int action,
 
     if (action == GLFW_PRESS) {
         pressed_key = key;
+        trig_pressed_key = key;
     }
 
     if (action == GLFW_RELEASE) {
         released_key = key;
+        trig_released_key = key;
     }
 }
 
@@ -97,15 +101,15 @@ int getKeyUp(lua_State *L) {
 int getKeyTrigger(lua_State *L) {
     static int previous_key = 0;
 
-    if (pressed_key == previous_key) pressed_key = 0;
-    lua_pushnumber(L, pressed_key);
+    if (trig_pressed_key == previous_key) trig_pressed_key = 0;
+    lua_pushnumber(L, trig_pressed_key);
 
-    if (pressed_key == released_key)  {
-        pressed_key = -1;
-        released_key = -2;
+    if (trig_pressed_key == trig_released_key)  {
+        trig_pressed_key = -1;
+        trig_released_key = -2;
     }
 
-    previous_key = pressed_key;
+    previous_key = trig_pressed_key;
 
     return 1;
 }
