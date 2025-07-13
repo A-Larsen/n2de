@@ -130,3 +130,4 @@ example if the window is dragged between a regular monitor and a high-DPI one.
 - http://lua.sqlite.org/index.cgi/doc/tip/doc/lsqlite3.wiki[lua sqlite]
 - https://www.glfw.org/docs/latest/intro_guide.html[glfw intro guide]
 - https://www.glfw.org/docs/latest/group__init.html[glfw api]
+- https://www.youtube.com/watch?v=LzwXHuMu6PU&list=PLA0dXqQjCx0S04ntJKUftl6OaOgsiwHjA&index=1[openGL for beginners playlist]
