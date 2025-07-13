@@ -17,6 +17,22 @@
  */
 #include "stdlib.h"
 GLFWwindow *window = NULL;
+int pressed_key = -1;
+int released_key = -2;
+bool quit = false;
+
+// callback function go here
+static void keyCallback(GLFWwindow *window, int key, int scancode, int action, 
+        int mods) {
+
+    if (action == GLFW_PRESS) {
+        pressed_key = key;
+    }
+
+    if (action == GLFW_RELEASE) {
+        released_key = key;
+    }
+}
 
 int init(lua_State *L) {
     glfwInit();
@@ -28,6 +44,7 @@ int init(lua_State *L) {
 
 int createWindow(lua_State *L) {
     window = glfwCreateWindow(800, 800, "game", NULL, NULL);
+    glfwSetKeyCallback(window, keyCallback);
     if (window == NULL) {
         N2DE_ERROR("could not create glfw window\n");
         glfwTerminate();
@@ -38,7 +55,7 @@ int createWindow(lua_State *L) {
     if (err != GLEW_OK) {
         N2DE_ERROR("could not initialize glew\n");
     }
-    glViewport(0, 0, 800, 800);
+    glViewport(0, 0, 0, 0);
     printf("opengl version: %s\n", glGetString(GL_VERSION));
 
     /* GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER); */
@@ -60,16 +77,53 @@ int createWindow(lua_State *L) {
     return 0;
 
 }
-int getKey(lua_State *L) {
-    return 0;
+
+int getWindowShouldClose(lua_State *L) {
+    lua_pushnumber(L, quit);
+    return 1;
 }
 
+int getKeyDown(lua_State *L) {
+    lua_pushnumber(L, pressed_key);
+    return 1;
+}
+
+int getKeyUp(lua_State *L) {
+    lua_pushnumber(L, released_key);
+    return 1;
+}
+
+int getKeyTrigger(lua_State *L) {
+    static int previous_key = 0;
+    static int trig = 0;
+
+    int trig_key = lua_tonumber(L, -1);
+
+    trig = previous_key != pressed_key && pressed_key == trig_key;
+
+    lua_pushboolean(L, trig);
+
+    if (pressed_key == released_key)  {
+        pressed_key = -1;
+        released_key = -2;
+    }
+
+    previous_key = pressed_key;
+
+    return 1;
+}
+
+int pollEvents(lua_State *L) {
+    glfwPollEvents();
+    quit = glfwWindowShouldClose(window);
+    return 0;
+}
 int delay(lua_State *L) {
-    SDL_Delay(1000);
+    SDL_Delay(lua_tointeger(L, -1));
     return 0;
 }
 
-int quit(lua_State *L) {
+int terminate(lua_State *L) {
     glfwDestroyWindow(window);
     glfwTerminate();
     return 0;
@@ -79,8 +133,12 @@ luaL_Reg test[] = {
     {"init", init},
     {"createWindow", createWindow},
     {"delay", delay},
-    {"quit", quit},
-    {"getKey", getKey},
+    {"quit", terminate},
+    {"getKeyDown", getKeyDown},
+    {"getKeyUp", getKeyUp},
+    {"pollEvents", pollEvents},
+    {"getWindowShouldClose", getWindowShouldClose},
+    {"getKeyTrigger", getKeyTrigger},
     {NULL, NULL}
 };
 
