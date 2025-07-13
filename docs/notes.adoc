@@ -101,3 +101,4 @@ main thread due to limitations of one or several platforms.
 - https://sqlite.org/docs.html[sqlite]
 - http://lua.sqlite.org/index.cgi/doc/tip/doc/lsqlite3.wiki[lua sqlite]
 - https://www.glfw.org/docs/latest/intro_guide.html[glfw intro guide]
+- https://www.glfw.org/docs/latest/group__init.html[glfw api]
