@@ -35,6 +35,9 @@ endif
 all: n2de database error files memory
 	@eval ./scripts/game_folder_check $(GAME_NAME)
 	$(CC) $(CCFLAGS) -o $(GAME_NAME)/$(GAME_NAME)$(EXECEXTENSION) *.o $(LIBS)
+ifdef LINUX
+	@eval ./scripts/program_permisions -s $(GAME_NAME)/$(GAME_NAME)$(EXECEXTENSION)
+endif
 
 $(GAME_NAME): $(GAME_NAME)/$(GAME_NAME)$(EXECEXTENSION)
 	@eval ./scripts/game_folder_check $(GAME_NAME)

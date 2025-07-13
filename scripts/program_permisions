@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+while getopts "s:" option; do
+  case $option in
+    s)
+        sudo chown root:root $2
+        sudo chmod a+s $2
+    ;;
+    ?) echo "error: option -$OPTARG is not implemented"; exit ;;
+  esac
+done
+

@@ -1,3 +1,17 @@
+== Operating Systems
+=== Linux
+On linux, you can only exccess the opengl drivers from the root user. This mean
+you need the program to be ran like `sudo ./<name of game>`. Is there a way to
+resolve this?
+
+- posible solution https://stackoverflow.com/questions/26421803/run-my-executable-automatically-as-root-ubuntu[root:root]
+
+[source, bash]
+----
+sudo chown root:root ./program
+sudo chmod a+s ./program
+----
+
 == Pointers
 *ALWAYS* initialize to `NULL`. use `assert()` to check if null when needed. Set back
 to `NULL` after freeing data.
