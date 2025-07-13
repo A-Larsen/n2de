@@ -82,13 +82,27 @@ Also,
 
 3. Are all recursive and thread-safe functions reentrant?
 
-== Thread Saftey
+=== Thread Saftey
 The reference documentation for every GLFW function states whether it is limited
 to the main thread.
 
 Initialization, termination, event processing and the creation and destruction
 of windows, cursors and OpenGL and OpenGL ES contexts are all restricted to the
 main thread due to limitations of one or several platforms.
+
+=== Frame buffer
+There is also `glfwGetFramebufferSize` for directly retrieving the current size of
+the framebuffer of a window.
+
+[source, c]
+----
+int width, height;
+glfwGetFramebufferSize(window, &width, &height);
+glViewport(0, 0, width, height);
+----
+
+The size of a framebuffer may change independently of the size of a window, for
+example if the window is dragged between a regular monitor and a high-DPI one.
 
 == Documentation
 - https://www.khronos.org/opengl/wiki/Image_Load_Store[opengl]
