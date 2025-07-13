@@ -16,10 +16,11 @@
  * Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 #include "stdlib.h"
-GLFWwindow *window = NULL;
-int pressed_key = -1;
-int released_key = -2;
-bool quit = false;
+
+static GLFWwindow *window = NULL;
+static int pressed_key = -1;
+static int released_key = -2;
+static bool quit = false;
 
 // callback function go here
 static void keyCallback(GLFWwindow *window, int key, int scancode, int action, 
@@ -95,13 +96,9 @@ int getKeyUp(lua_State *L) {
 
 int getKeyTrigger(lua_State *L) {
     static int previous_key = 0;
-    static int trig = 0;
-
     int trig_key = lua_tonumber(L, -1);
 
-    trig = previous_key != pressed_key && pressed_key == trig_key;
-
-    lua_pushboolean(L, trig);
+    lua_pushboolean(L, pressed_key != previous_key && pressed_key == trig_key);
 
     if (pressed_key == released_key)  {
         pressed_key = -1;
