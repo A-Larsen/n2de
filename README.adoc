@@ -64,8 +64,10 @@ make lib LIB=<lib name>
 Linux
 
 ----
-make lib LINUX=true LIB=<lib name>
+sudo make lib LINUX=true LIB=<lib name>
 ----
+
+WARNING: sudo is import so you can set file permision correctly
 
 NOTE: You must build the engine and the stdlib lib for the game to run!
 

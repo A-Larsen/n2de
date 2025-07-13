@@ -50,7 +50,7 @@ int createWindow(lua_State *L) {
     GLfloat v1[] = {-width, 0};
     GLfloat v2[] = {width, 0};
 
-    glColor3f(.0f,.5f,.5f);
+    glColor3f(.0f,.0f,.0f);
 
     glBegin(GL_LINES);
         glVertex2fv(v1);
@@ -59,6 +59,9 @@ int createWindow(lua_State *L) {
     glfwSwapBuffers(window);
     return 0;
 
+}
+int getKey(lua_State *L) {
+    return 0;
 }
 
 int delay(lua_State *L) {
@@ -77,6 +80,7 @@ luaL_Reg test[] = {
     {"createWindow", createWindow},
     {"delay", delay},
     {"quit", quit},
+    {"getKey", getKey},
     {NULL, NULL}
 };
 
