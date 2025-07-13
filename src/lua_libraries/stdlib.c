@@ -66,7 +66,6 @@ int delay(lua_State *L) {
     return 0;
 }
 
-
 int quit(lua_State *L) {
     glfwDestroyWindow(window);
     glfwTerminate();
